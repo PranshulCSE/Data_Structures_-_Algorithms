@@ -21,14 +21,15 @@ int main()
 
     // Bubble Sort
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n - 1; i++)
     {
-        for (j = i + 1; j < n; j++)
+        // For Pass
+        for (j = 1; j < n - i; j++)
         {
-            if (arr[j] < arr[i])
+            if (arr[j] < arr[j + 1])
             {
-                // It Sorts Element in Descending order for Ascending must use  if(arr[j]<arr[i]) istead of  if(arr[j]>arr[i])
-                swap(arr[j], arr[i]);
+                // It Sorts Element in Descending order for Ascending must use  if(arr[j]<arr[j+1]) istead of  if(arr[j]>arr[j+1])
+                swap(arr[j], arr[j + 1]);
             }
         }
     }

@@ -1,9 +1,7 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-
-int main()
-{
-    int n, i, j, temp;
+int main(){
+    int n,i;
     cout << "Enter number of elements: ";
     cin >> n;
     int a[n];
@@ -13,21 +11,19 @@ int main()
     {
         cin >> a[i];
     }
-
-    // Bubble sort
-    for (i = 0; i < n - 1; i++)
+    //   7|4|2|3|5
+    // Insertion sort
+    for(i=1;i<n;i++)
+    for(int j=i;j>0;j--)
     {
-        for (j = 1; j <= n-i; j++) // to reduce time complexity & reducing no. off loops
+        if(a[j]<a[j-1])
         {
-            if (a[j] > a[j + 1])
-            {
-                temp = a[j];
-                a[j] = a[j + 1];
-                a[j + 1] = temp;
-            }
+            swap(a[j],a[j-1]);
         }
+        else
+        break;
     }
-
+   
     cout << "Sorted array:\n";
     for (i = 0; i < n; i++)
     {

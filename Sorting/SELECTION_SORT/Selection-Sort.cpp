@@ -21,9 +21,7 @@ int main() {
             }
         }
         // Swap
-        int temp = a[i];
-        a[i] = a[min];
-        a[min] = temp;
+        swap(a[min],a[i]);
     }
 
     cout << "Sorted array:\n";

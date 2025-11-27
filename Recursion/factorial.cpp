@@ -11,9 +11,10 @@ int fact(int x)
 }
 int main()
 {
-    int n,res;
+    int n;
+    long res;
     cout<<"Kindly Enter the Number to find factorial:\n";
     cin>>n;
     res=fact(n);
-    cout<<"\nFactorial of "<<n<<"is:"<<res;
+    cout<<"\nFactorial of "<<n<<" is:"<<res;
 }
