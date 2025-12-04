@@ -14,34 +14,27 @@ public:
         right = NULL;
     }
 };
-void printleft(Node *n) // To Access Left Elements of the Tree
+void Inorder(Node *root) // For Inorder Traversal of the Tree
 {
-    while (n != NULL)
-    {
-        cout << n->data << "  ";
-        n = n->left;
-    }
-    cout << endl;
+    if (root == NULL)
+        return;
+    Inorder(root->left);        // Traversing left Subtree
+    cout << root->data << "\t"; // Printing the data
+    Inorder(root->right);       // Traversing Right Subtree
 }
-void printright(Node *n) // To Access Right Elements of the Tree
-{
-    while (n != NULL)
-    {
-        cout << n->data << "  ";
-        n = n->right;
-    }
-    cout << endl;
-}
+
 int main()
 {
     Node *root = new Node(11);
     root->left = new Node(25);
     root->right = new Node(36);
     root->left->left = new Node(63);
+    root->left->left->left = new Node(22);
+    root->left->left->right = new Node(32);
+    root->right->left->left = new Node(79);
+    root->right->left->right = new Node(29);
     root->left->right = new Node(88);
     root->right->left = new Node(99);
-    cout << "Left Elements of the tree are: ";
-    printleft(root);
-    cout << "Right Elements of the tree are: ";
-    printright(root);
+    cout << "Inorder Traversal of the Tree is:\t ";
+    Inorder(root);
 }
