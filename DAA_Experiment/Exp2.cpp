@@ -1,9 +1,14 @@
 // Bubble Sort
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 int main(){
-    int arr[]={78,25,41,63,99,44,11,25,53,8};
-    int n=10;
+    int n;
+    cout << "Enter Size of Array: ";
+    cin >> n;
+    int arr[n];
+    cout << "Enter Array Elements: \n";
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
     for(int i=0;i<n;i++)
         for(int j=0;j<n-i-1;j++)
             if(arr[j]>arr[j+1])
