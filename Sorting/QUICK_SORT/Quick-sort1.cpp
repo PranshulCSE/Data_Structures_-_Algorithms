@@ -9,6 +9,13 @@ int partition(int num[], int s, int e)
             count++;
     }
     swap(num[s],num[s+count]);
+
+
+int pivot=s+count;
+    int i=s,j=e;
+    
+
+
 }
 void quicksort(int arr[], int s, int e)
 {
