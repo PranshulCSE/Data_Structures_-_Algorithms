@@ -2,25 +2,39 @@
 using namespace std;
 int partition(int num[], int s, int e)
 {
-    int element=num[s];
+    int pivotelement=num[s];
     int count=0;
     for(int i=s+1;i<=e;i++){
-        if(num[i]<=element)
+        if(num[i]<=pivotelement)
             count++;
     }
     swap(num[s],num[s+count]);
 
+    int pivot=s+count;
+    swap(num[s],num[pivot]);
 
-int pivot=s+count;
     int i=s,j=e;
-    
 
+    while(i<pivot && j>pivot){
+        while (num[i] <= pivot)
+                i++;
+
+            while (num[j] > pivotelement)
+                j--;
+
+            if (i < pivot && j > pivot )
+                swap(num[i++], num[j--]);
+    }
+    
+    return pivot;
 
 }
+
+
 void quicksort(int arr[], int s, int e)
 {
     if (s >= e)
-        return;
+     return;
     int p = partition(arr, s, e);
     quicksort(arr, s, p - 1);
     quicksort(arr, p + 1, e);
@@ -36,8 +50,7 @@ int main()
     for (int i = 0; i < n; i++)
         cin >> arr[i];
 
-    cout << endl
-         << "Array after Sorting is:" << endl;
+    cout << endl << "Array after Sorting is:" << endl;
 
     quicksort(arr, 0, n - 1);
 
